@@ -1,0 +1,7 @@
+<!-- If the user is not authenticated, display the login button -->
+<app-login-button *ngIf="(auth.isAuthenticated$ | async) === false">
+</app-login-button>
+
+<!-- If the user is authenticated, display the logout button -->
+<app-logout-button *ngIf="auth.isAuthenticated$ | async">
+</app-logout-button>
