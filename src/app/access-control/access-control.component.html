@@ -3,5 +3,5 @@
 </app-login-button>
 
 <!-- If the user is authenticated, display the logout button -->
-<app-logout-button *ngIf="auth.isAuthenticated$ | async">
-</app-logout-button>
+<app-profile *ngIf="(auth.isAuthenticated$) | async">
+</app-profile>

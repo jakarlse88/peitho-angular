@@ -1,27 +1,70 @@
 <mat-sidenav-container class="sidenav-container">
+
+  <!-- Side Nav -->
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === true">
+
+    <!-- SideNav Heading -->
     <mat-toolbar>Menu</mat-toolbar>
+    <mat-divider></mat-divider>
+
+    <!-- Public -->
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+
+      <div class="mat-subheader">Public</div>
+
+      <mat-list-item routerLink="/">
+        <mat-icon matListIcon>home</mat-icon>
+        <div class="mat-line">Home</div>
+      </mat-list-item>
+
     </mat-nav-list>
+
+    <!-- Admin -->
+    <div>
+      <mat-divider></mat-divider>
+
+      <mat-nav-list>
+        <div class="mat-subheader">Admin</div>
+
+        <mat-list-item routerLink="/admin">
+          <mat-icon matListIcon>dashboard</mat-icon>
+          <div class="mat-line">Dashboard</div>
+        </mat-list-item>
+
+        <mat-list-item routerLink="/admin/technique">
+          <mat-icon matListIcon>keyboard_arrow_right</mat-icon>
+          <div class="mat-line">Technique</div>
+        </mat-list-item>
+
+      </mat-nav-list>
+    </div>
+
+
   </mat-sidenav>
+
   <mat-sidenav-content>
+
+    <!-- Navbar -->
     <mat-toolbar color="primary">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+
+      <!-- Sidebar toggle -->
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon *ngIf="drawer.opened" aria-label="Side nav toggle icon">close</mat-icon>
+        <mat-icon *ngIf="!drawer.opened" aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
+
       <!-- Logo -->
-      <span>Peitho</span>
+      <a routerLink="/" class="navbar-logo" matRipple>Peitho</a>
 
       <!-- Access Control -->
       <span>
         <app-access-control></app-access-control>
       </span>
+
     </mat-toolbar>
-    <!-- Add Content Here -->
+
+    <!-- Body -->
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

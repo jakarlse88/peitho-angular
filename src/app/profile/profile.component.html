@@ -1,0 +1,17 @@
+<div *ngIf="auth.user$ | async as user">
+    <button mat-button [matMenuTriggerFor]="menu" aria-label="Button with a menu">
+        Hi, {{ user.name }}!
+        <mat-icon>account_circle</mat-icon>
+    </button>
+</div>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>
+        <mat-icon class="mat-icon">dashboard</mat-icon>
+        <a routerLink="/admin">Admin Dashboard</a>
+    </button>
+    <button mat-menu-item (click)="logout()">
+        <mat-icon class="mat-icon">clear</mat-icon>
+        Log Out
+    </button>
+</mat-menu>

@@ -1,1 +1,7 @@
-<app-navbar></app-navbar>
+<div *ngIf="auth.isLoading$ | async; else loaded" class="spinner-container">
+    <mat-spinner></mat-spinner>
+</div>
+
+<ng-template #loaded>
+    <app-navbar></app-navbar>
+</ng-template>
