@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { environment as env } from '../../environments/environment';
-import { Technique } from '../_models/Technique';
+import { Technique } from './technique.model';
 
 @Component({
   selector: 'app-technique-overview',

@@ -21,7 +21,7 @@
     </mat-nav-list>
 
     <!-- Admin -->
-    <div>
+    <div *ngIf="authorizationService.userIsAdmin$ | async">
       <mat-divider></mat-divider>
 
       <mat-nav-list>
@@ -39,7 +39,6 @@
 
       </mat-nav-list>
     </div>
-
 
   </mat-sidenav>
 
