@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthService } from '@auth0/auth0-angular';
+import { AuthorizationService } from '../authorization.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,8 +18,12 @@ export class NavbarComponent {
       shareReplay()
     );
 
+  userIsAdmin: boolean;
+
   constructor(
     private breakpointObserver: BreakpointObserver,
-    public auth: AuthService
+    public authenticationService: AuthService,
+    public authorizationService: AuthorizationService,
   ) { }
+
 }

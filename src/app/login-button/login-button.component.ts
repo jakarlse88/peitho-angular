@@ -15,7 +15,7 @@ export class LoginButtonComponent implements OnInit {
 
   /** Hooks into the Auth0 authz flow */
   loginWithRedirect(): void {
-    this.auth.loginWithRedirect({ screen_hint: "signup" });
+    this.auth.loginWithRedirect({ screen_hint: "signin" });
   }
 
 }

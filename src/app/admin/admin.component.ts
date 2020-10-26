@@ -3,6 +3,7 @@ import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
 import { OnInit } from '@angular/core';
+import { AuthorizationService } from '../authorization.service';
 
 @Component({
   selector: 'app-admin',
@@ -35,12 +36,7 @@ export class AdminComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private route: ActivatedRoute
+    public authorizationService: AuthorizationService
   ) { }
 
-  ngOnInit() {
-    const userRoles: string[] = this.route.snapshot.data['userRoles'] || [];
-
-    this.userHasRequiredRoleClaim = userRoles && userRoles.length > 0 && userRoles.includes('admin');
-  }
 }

@@ -27,6 +27,7 @@ import { AdminComponent } from './admin/admin.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { TechniqueOverviewComponent } from './technique-overview/technique-overview.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import { TechniqueOverviewComponent } from './technique-overview/technique-overv
         LoginButtonComponent,
         NavbarComponent,
         ProfileComponent,
-        TechniqueOverviewComponent
+        TechniqueOverviewComponent,
+        HomeComponent
     ],
     imports: [
         AuthModule.forRoot({
