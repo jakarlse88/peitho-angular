@@ -47,14 +47,16 @@
     <!-- Navbar -->
     <mat-toolbar color="primary">
 
-      <!-- Sidebar toggle -->
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-        <mat-icon *ngIf="drawer.opened" aria-label="Side nav toggle icon">close</mat-icon>
-        <mat-icon *ngIf="!drawer.opened" aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+      <div class="left-align-container">
+        <!-- Sidebar toggle -->
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon *ngIf="drawer.opened" aria-label="Side nav toggle icon">close</mat-icon>
+          <mat-icon *ngIf="!drawer.opened" aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
 
-      <!-- Logo -->
-      <a routerLink="/" class="navbar-logo" matRipple>Peitho</a>
+        <!-- Logo -->
+        <a routerLink="/" class="navbar-logo" matRipple>Peitho</a>
+      </div>
 
       <!-- Access Control -->
       <span>
